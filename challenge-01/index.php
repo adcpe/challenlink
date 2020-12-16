@@ -1,12 +1,10 @@
 <?php
 
-function splitStr($str)
-{
+function splitStr($str) {
     return preg_split("/, /", $str);
 }
 
-function findPoint($strArr)
-{
+function findPoint($strArr) {
     $newArr = array_map ("splitStr", $strArr);
     return implode(",", array_intersect($newArr[0], $newArr[1]));
 }
