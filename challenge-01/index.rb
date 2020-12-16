@@ -1,6 +1,6 @@
 def findPoint(strArr)
   newArr = strArr.map { |x| x.split(', ') }
-  newArr[0] & newArr[1]
+  (newArr[0] & newArr[1]).join(',')
 end
 
 # keep this function call here

@@ -3,11 +3,12 @@ def noIterate(strArr)
   maxIndex = strArr[0].size
 
   while strLength <= maxIndex
+    origSample = strArr[1].split('')
+
     strLength.times do |i|
-      origSample = strArr[1].split('')
+      hits = 0
       newSample = strArr[0][i, strLength].split('')
       newSampleCopy = newSample.join('')
-      hits = 0
 
       origSample.each do |l|
         if newSample.include?(l)

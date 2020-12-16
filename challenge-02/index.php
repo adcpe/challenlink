@@ -7,12 +7,13 @@ function noIterate($strArr)
 
     while ($strLength <= $maxIndex)
     {
+        $origSample = str_split($strArr[1]);
+
         for ($i=0; $i <= $strLength ; $i++)
         { 
-            $origSample = str_split($strArr[1]);
+            $hits = 0;
             $newSample = str_split(substr($strArr[0], $i, $strLength));
             $newSampleCopy = implode($newSample);
-            $hits = 0;
 
             foreach ($origSample as $val)
             {
@@ -27,7 +28,7 @@ function noIterate($strArr)
         }
         $strLength += 1;
     }
-    return "hey";
+    return "";
 }
 
 // keep this function call here
