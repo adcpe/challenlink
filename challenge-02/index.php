@@ -1,7 +1,6 @@
 <?php
 
-function noIterate($strArr)
-{
+function noIterate($strArr) {
     $strLength = strlen($strArr[1]);
     $maxIndex = strlen($strArr[0]);
 
