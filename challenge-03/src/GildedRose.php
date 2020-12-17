@@ -22,26 +22,26 @@ class GildedRose {
         if ($this->name != 'Sulfuras, Hand of Ragnaros') $this->sellIn -= 1;
 
         // update quality
-        // Aged Brie
-        if ($this->name == 'Aged Brie') {
-            $this->quality += $this->sellIn > 0 ? 1 : 2;
-        // Backstage passes to a TAFKAL80ETC concert
-        } elseif ($this->name == 'Backstage passes to a TAFKAL80ETC concert') {
-            if ($this->sellIn >= 10) {
-                $this->quality += 1;
-            } elseif ($this->sellIn < 10 and $this->sellIn > 5) {
-                $this->quality += 2;
-            } elseif ($this->sellIn <= 5 and $this->sellIn >= 0) {
-                $this->quality += 3;
-            } elseif ($this->sellIn < 0) {
-                $this->quality = 0;
-            }
-        // Normal
-        } elseif ($this->name == 'normal') {
-            $this->quality -= $this->sellIn >= 0 ? 1 : 2;
-        // Conjured Mana Cake
-        } elseif ($this->name == 'Conjured Mana Cake') {
-            $this->quality -= $this->sellIn > 0 ? 2 : 4;
+        switch ($this->name) {
+            case 'Aged Brie':
+                $this->quality += $this->sellIn > 0 ? 1 : 2;
+                break;
+            case 'Backstage passes to a TAFKAL80ETC concert':
+                if ($this->sellIn >= 10) {
+                    $this->quality += 1;
+                } elseif ($this->sellIn < 10 and $this->sellIn > 5) {
+                    $this->quality += 2;
+                } elseif ($this->sellIn <= 5 and $this->sellIn >= 0) {
+                    $this->quality += 3;
+                } elseif ($this->sellIn < 0) {
+                    $this->quality = 0;
+                }
+                break;
+            case 'normal':
+                $this->quality -= $this->sellIn >= 0 ? 1 : 2;
+                break;
+            case 'Conjured Mana Cake':
+                $this->quality -= $this->sellIn > 0 ? 2 : 4;
         }
 
         // don't let quality be lower than than 0
