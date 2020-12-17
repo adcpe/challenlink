@@ -8,7 +8,7 @@ function noIterate($strArr)
     while ($strLength <= $maxIndex) {
         $origSample = str_split($strArr[1]);
 
-        for ($i=0; $i <= $strLength ; $i++) { 
+        for ($i = 0; $i <= $strLength ; $i++) { 
             $hits = 0;
             $newSample = str_split(substr($strArr[0], $i, $strLength));
             $newSampleCopy = implode($newSample);
@@ -19,7 +19,7 @@ function noIterate($strArr)
                    $hits += 1;
                }
             }
-            if (count($origSample) == $hits) return $newSampleCopy;
+            if (count($origSample) === $hits) return $newSampleCopy;
         }
         $strLength += 1;
     }
